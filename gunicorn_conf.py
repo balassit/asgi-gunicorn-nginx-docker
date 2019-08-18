@@ -2,7 +2,7 @@ import json
 import multiprocessing
 import os
 
-workers_per_core_str = os.getenv("WORKERS_PER_CORE", "1")
+workers_per_core_str = os.getenv("WORKERS_PER_CORE", "2")
 web_concurrency_str = os.getenv("WEB_CONCURRENCY", None)
 host = os.getenv("HOST", "unix")
 port = os.getenv("PORT", "///tmp/asgi.sock")
@@ -26,7 +26,6 @@ else:
 loglevel = use_loglevel
 workers = web_concurrency
 bind = use_bind
-keepalive = 120
 errorlog = "-"
 
 # For debugging and testing
